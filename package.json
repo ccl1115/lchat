@@ -1,0 +1,11 @@
+{
+  "name": "lchat",
+  "subdomain": "bb.simon.lchat",
+  "scripts": {
+    "start": "server.js"
+  },
+  "version": "0.0.0",
+  "engines": {
+    "node": "0.8.x"
+  }
+}
