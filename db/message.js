@@ -2,10 +2,14 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
     ObjectId = mongoose.Schema.Types.ObjectId;
 
+var modelNames = require('./config').moduleNames;
+
 mongoose.connect(require('./config').connectString);
 
 var messageSchema = new Schema({
-    date: { type: Date, 'default': Date.now },
+    createDate: { type: Date, 'default': Date.now },
     text: { type: String, required: true },
-    oner: { type: ObjectId, ref : 'User' }
+    owner: { type: ObjectId, ref : modelNames.user }
 });
+
+var MessageModel = exports.MessageModel = new Schema(modelNames.message, messageSchema);
